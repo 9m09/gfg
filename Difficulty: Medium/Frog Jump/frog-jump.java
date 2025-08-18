@@ -12,7 +12,7 @@ class Solution {
         if(dp[n]!=-1)   return dp[n];
         int two = Integer.MAX_VALUE;
         int one=Math.abs(height[n]-height[n-1])+help(dp,n-1,height);
-        if(n-2>-1)
+        if(n>1)
         two=Math.abs(height[n]-height[n-2])+help(dp,n-2,height);
         return  dp[n]=Math.min(one,two);
     }
