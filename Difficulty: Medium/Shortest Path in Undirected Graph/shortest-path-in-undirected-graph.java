@@ -2,13 +2,13 @@
 class Solution {
     public int[] shortestPath(ArrayList<ArrayList<Integer>> adj, int src) {
         int[] dist = new int[adj.size()];
-        boolean[] vis = new boolean[adj.size()];
+        // boolean[] vis = new boolean[adj.size()];
         Arrays.fill(dist,Integer.MAX_VALUE);
         
         dist[src]=0;
         Queue<int[]> queue= new LinkedList<>();
         queue.add(new int[]{src,0});
-        vis[src]=true;
+        // vis[src]=true;
         while(!queue.isEmpty()){
             int[] arr=queue.poll();
             int node=arr[0];
@@ -23,7 +23,7 @@ class Solution {
                 if(dist[adj.get(node).get(i)]>d+1){
                         queue.add(new int[]{adj.get(node).get(i),d+1});
                         dist[adj.get(node).get(i)]=d+1;
-                        vis[adj.get(node).get(i)]=true;
+                        // vis[adj.get(node).get(i)]=true;
                     // }
                 }
             }
